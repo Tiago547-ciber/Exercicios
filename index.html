@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olá, Mundo!</title>
+    <style>
+      h5 {
+          font-size: 100px;
+          position: absolute;
+          z-index: 10;
+          margin: 0px 0px 0px 720px;
+       }
+
+      #inputs {
+          font-size: 100px;
+          position: absolute;
+          z-index: 10;
+          margin: -200px 0px 0px 510px;
+ 
+       }
+
+      #sub {
+          font-size: 50px;
+          position: absolute;
+          z-index: 10;
+          margin: 120px 0px 0px 600px;
+       }
+      
+      #central {
+          margin: 0px 0px 0px 200px;
+       }
+      #tela {
+          background-color: whitesmoke;
+          width: 400px;
+          height:500px;
+          position: absolute;
+          z-index: 1;
+          margin: 300px 0px 0px 500px;
+          border: 5px solid black;
+          animation: move1 2s infinite alternate;
+          border-radius: 5px;
+
+         }
+
+      #reflexo {
+          background-color: black;
+          width: 280px;
+          height:50px;
+          position: absolute;
+          z-index: 1;
+          margin: 850px 0px 0px 565px;
+          box-shadow: 2px 2px 9px 20px black;
+          border-radius: 30px;
+          transform: rotateX(80deg);
+          opacity: 0.5;
+          animation: move2 2s infinite alternate;
+         }
+
+
+      h1 {
+          width: 50px;
+          height:5px;
+          background-color: rgba(0, 240, 0, 0.8);
+          position: absolute;
+          z-index: 4;
+          margin: 400px 0px 0px 50px;
+         }
+      input {
+          width: 50px;
+          height:20px;
+          position: absolute;
+          z-index: 5;
+          margin: 450px 0px 0px 45px;
+         }
+      #h2 {
+          width: 50px;
+          height:5px;
+          background-color: rgba(0, 240, 0, 0.8);
+          position: absolute;
+          z-index: 4;
+          margin: 400px 0px 0px 122px;
+         }
+      #input2 {
+          width: 50px;
+          height:20px;
+          position: absolute;
+          z-index: 5;
+          margin: 450px 0px 0px 120px;
+         }
+
+      #h3 {
+          width: 50px;
+          height:5px;
+          background-color: rgba(0, 240, 0, 0.8);
+          position: absolute;
+          z-index: 4;
+          margin: 400px 0px 0px 200px;
+         }
+      #input3 {
+          width: 50px;
+          height:20px;
+          position: absolute;
+          z-index: 5;
+          margin: 450px 0px 0px 195px;
+         }
+
+      #h4 {
+          width: 50px;
+          height:5px;
+          background-color: rgba(0, 240, 0, 0.8);
+          position: absolute;
+          z-index: 4;
+          margin: 400px 0px 0px 285px;
+         }
+      #input4 {
+          width: 50px;
+          height:20px;
+          position: absolute;
+          z-index: 5;
+          margin: 450px 0px 0px 280px;
+         }
+
+    @keyframes move1{
+        from {
+               margin: 300px 0px 0px 500px;
+         }
+        to {
+               margin: 310px 0px 0px 500px;
+        }
+    }
+
+    @keyframes move2{
+        from {
+               box-shadow: 2px 2px 9px 20px black;
+         }
+        to {
+               box-shadow: 2px 2px 9px 25px black;
+        }
+    }
+
+    </style>
+</head>
+<body>
+   <h5>Gráfico.</h5>
+   <h5 id="sub">Digite valores entre 0 e 700.</h5>
+   <div id="central">
+      <div id="inputs">
+          <input id="input" type="sandbox">
+          <input id="input2" type="sandbox">
+          <input id="input3" type="sandbox">
+          <input id="input4" type="sandbox">
+      </div>
+      <div id="tela">
+          <h1 id="h1"> </h1>
+          
+          <h1 id="h2"> </h1>
+          
+          <h1 id="h3"> </h1>
+          
+          <h1 id="h4"> </h1>
+          
+      </div>
+      <div id="reflexo"></div>
+  </div>
+</body>
+<script>
+const h1 = document.getElementById("h1");
+const input = document.getElementById("input");
+const h2 = document.getElementById("h2");
+const input2 = document.getElementById("input2");
+const h3 = document.getElementById("h3");
+const input3 = document.getElementById("input3");
+const h4 = document.getElementById("h4");
+const input4 = document.getElementById("input4");
+
+setInterval(() => {
+    h1.style.height = input.value/2 + "px";
+    h1.style.transform = "translateY(-" + input.value/2 + "px)";
+    h2.style.height = input2.value/2 + "px";
+    h2.style.transform = "translateY(-" + input2.value/2 + "px)";
+    h3.style.height = input3.value/2 + "px";
+    h3.style.transform = "translateY(-" + input3.value/2 + "px)";
+    h4.style.height = input4.value/2 + "px";
+    h4.style.transform = "translateY(-" + input4.value/2 + "px)";
+}, 100);
+
+</script>
+</html>
